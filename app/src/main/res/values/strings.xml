@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">c3454574Recycler View</string>
+    <string name="todo_title">task title</string>
+    <string name="todo_hint">task title hint</string>
+    <string name="todo_label">One line description of the todo</string>
+    <string name="todo_detail">detail of what to do</string>
+    <string name="todo_done">is it complete?</string>
+    <string name="todo_date">Task date</string>
+</resources>
