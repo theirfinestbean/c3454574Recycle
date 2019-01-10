@@ -16,13 +16,13 @@ public class TodoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        //if activity recreated restore the previous todo selection set by onSaveInstanceState().
-        //this is necessary when in a two-pane layout.
+        //if activity recreated restore previous selection set by onSaveInstanceState().
+        //necessary in a two-pane layout.
         if (savedInstanceState != null) {
             mCurrentPosition = savedInstanceState.getInt(ARG_POSITION);
         }
 
-        // Inflate the layout for this fragment
+        //inflate the layout for this fragment
         return inflater.inflate(R.layout.view_todo, container, false);
     }
 
@@ -30,16 +30,15 @@ public class TodoFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        // During startup, check if there are arguments passed to the fragment.
-        // onStart is a good place to do this because the layout has already been
-        // applied to the fragment at this point so we can safely call the method
-        // below that sets the todo text.
+        //in startup check for arguments passed to the fragment.
+        //onStart is good to do this because the layout is already applied
+        //to the fragment here so we can call method below setting todo text.
         Bundle args = getArguments();
         if (args != null) {
-            //set todo based on argument passed in
+            //set todo based on argument
             updateTodoView(args.getInt(ARG_POSITION));
         } else if (mCurrentPosition != -1) {
-            //set todo based on saved instance state defined during onCreateView
+            //set todo based on savedInstanceState in onCreateView
             updateTodoView(mCurrentPosition);
         }
     }
@@ -52,7 +51,7 @@ public class TodoFragment extends Fragment {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        //save the current todo for recreation
+        //save current todo for recreation
         outState.putInt(ARG_POSITION, mCurrentPosition);
     }
 
