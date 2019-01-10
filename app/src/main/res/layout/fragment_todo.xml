@@ -26,16 +26,17 @@
         android:layout_height="@android:dimen/notification_large_icon_height"
         android:text="@string/todo_detail"/>
 
-    <Button
-        android:id="@+id/todo_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-
     <CheckBox
         android:id="@+id/todo_complete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/todo_done"/>
+
+    <Button
+        android:id="@+id/todo_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="saveButtonClicked"
+        android:text="save task" />
 
 </LinearLayout>

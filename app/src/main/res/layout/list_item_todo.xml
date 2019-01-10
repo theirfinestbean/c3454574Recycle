@@ -1,21 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="15dp">
 
-    <TextView
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onNewTask"
+            />
+
+        <TextView
+        android:id="@+id/textViewTodoTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/todo_title"
+        android:textSize="24sp"
+        />
+
+        <TextView
+        android:id="@+id/textViewTodoDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/todo_detail"
+        />
+
+        <TextView
         android:id="@+id/textViewTodoDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/todo_date"
         />
 
-    <TextView
-        android:id="@+id/textViewTodoTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/todo_title"
-        android:textSize="24sp"/>
 </LinearLayout>
+

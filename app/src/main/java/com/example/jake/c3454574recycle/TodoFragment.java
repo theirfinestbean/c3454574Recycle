@@ -16,9 +16,8 @@ public class TodoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        // If activity recreated (such as from screen rotate), restore
-        // the previous todo selection set by onSaveInstanceState().
-        // This is primarily necessary when in the two-pane layout.
+        //if activity recreated restore the previous todo selection set by onSaveInstanceState().
+        //this is necessary when in a two-pane layout.
         if (savedInstanceState != null) {
             mCurrentPosition = savedInstanceState.getInt(ARG_POSITION);
         }
@@ -37,15 +36,15 @@ public class TodoFragment extends Fragment {
         // below that sets the todo text.
         Bundle args = getArguments();
         if (args != null) {
-            // Set todo based on argument passed in
+            //set todo based on argument passed in
             updateTodoView(args.getInt(ARG_POSITION));
         } else if (mCurrentPosition != -1) {
-            // Set todo based on saved instance state defined during onCreateView
+            //set todo based on saved instance state defined during onCreateView
             updateTodoView(mCurrentPosition);
         }
     }
     public void updateTodoView(int position) {
-        TextView todo = (TextView) getActivity().findViewById(R.id.todo_recycler_view);
+        TextView todo = getActivity().findViewById(R.id.todo_recycler_view);
         todo.setText(Todo.Todos[position]);
         mCurrentPosition = position;
     }
@@ -53,7 +52,7 @@ public class TodoFragment extends Fragment {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        // Save the current todo for recreation
+        //save the current todo for recreation
         outState.putInt(ARG_POSITION, mCurrentPosition);
     }
 
